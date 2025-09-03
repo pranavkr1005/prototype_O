@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Resume - Internship Recommendation{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3>Upload Your Resume</h3>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('recommend') }}" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="resume" class="form-label">Choose PDF Resume</label>
+                        <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" required>
+                        <div class="form-text">Only PDF files are supported.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="interests" class="form-label">Additional Interests (Optional)</label>
+                        <textarea class="form-control" id="interests" name="interests" rows="3" 
+                                  placeholder="e.g., machine learning, web development, data analysis..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Find Matching Internships</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

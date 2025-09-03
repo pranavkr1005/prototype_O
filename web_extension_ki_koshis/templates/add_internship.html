@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Post Internship - Internship Recommendation{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3>Post New Internship</h3>
+            </div>
+            <div class="card-body">
+                <form id="internshipForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Internship Title *</label>
+                                <input type="text" class="form-control" id="title" name="title" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Company *</label>
+                                <input type="text" class="form-control" id="company" name="company" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description *</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="required_skills" class="form-label">Required Skills *</label>
+                        <input type="text" class="form-control" id="required_skills" name="required_skills" 
+                               placeholder="e.g., python, javascript, machine learning" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="duration" class="form-label">Duration *</label>
+                                <input type="text" class="form-control" id="duration" name="duration" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="stipend" class="form-label">Stipend ($) *</label>
+                                <input type="number" class="form-control" id="stipend" name="stipend" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="rating" class="form-label">Rating (0-5) *</label>
+                                <input type="number" class="form-control" id="rating" name="rating" min="0" max="5" step="0.1" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="popularity" class="form-label">Popularity (0-100) *</label>
+                                <input type="number" class="form-control" id="popularity" name="popularity" min="0" max="100" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="company_prestige" class="form-label">Company Prestige (0-10) *</label>
+                                <input type="number" class="form-control" id="company_prestige" name="company_prestige" min="0" max="10" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Post Internship</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='add_internship.js')}}"></script>
+{% endblock %}

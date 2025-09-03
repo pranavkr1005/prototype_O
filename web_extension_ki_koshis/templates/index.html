@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Internship Recommendation{% endblock %}
+
+{% block content %}
+<div class="hero-section text-center py-5 bg-light rounded">
+    <h1 class="display-4">Find Your Perfect Internship</h1>
+    <p class="lead">AI-powered internship matching based on your skills and resume</p>
+    <div class="mt-4">
+        <a href="{{ url_for('upload_resume') }}" class="btn btn-primary btn-lg me-3">Find Internships</a>
+        <a href="{{ url_for('add_internship_page') }}" class="btn btn-outline-primary btn-lg">Post Internship</a>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">AI Matching</h5>
+                <p class="card-text">Advanced NLP algorithms match your skills with the perfect internship opportunities.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Smart Recommendations</h5>
+                <p class="card-text">Get personalized recommendations based on skills, interests, and company preferences.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Easy Upload</h5>
+                <p class="card-text">Simply upload your resume and let our system do the rest. No manual data entry needed.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
